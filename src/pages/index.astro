@@ -3,7 +3,116 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout title="codelzn's name card">
-	<main></main>
+	<main>
+		<div class="container">
+			<div class="content">
+				<a href="#">codelzn</a>
+				<h2>GitHub: codelzn</h2>
+				<span>
+					ああああああああ
+					<br />
+					いいいいいいいい
+					<br />
+					うううううううう
+					<br />
+					ええええええええ
+				</span>
+			</div>
+			<div class="graphic">
+				<div class="item" style="--i:1;--w:1.5;"></div>
+				<div class="item" style="--i:2;--w:1.6;"></div>
+				<div class="item" style="--i:3;--w:1.4;"></div>
+				<div class="item" style="--i:4;--w:1.7;"></div>
+				<div class="itemp" style="--i:1;"></div>
+			</div>
+			<div class="pic"></div>
+		</div>
+	</main>
 </Layout>
 
-<style scoped></style>
+<style scoped>
+	main {
+		height: 100%;
+		background-color: rgb(204, 212, 230);
+		display: flex;
+		justify-content: center;
+	}
+	.container {
+		position: relative;
+		width: 700px;
+		height: 400px;
+		border: 10px solid #fff;
+		background-color: rgb(120, 140, 200);
+		top: 120px;
+		border-radius: 20px;
+		overflow: hidden;
+	}
+	.content {
+		position: absolute;
+		width: 200px;
+		height: 300px;
+		left: 0;
+		margin: 75px 50px;
+		transition: 1s;
+	}
+	.content a {
+		text-decoration: none;
+		color: #fff;
+		font: 900 28px "Noto Sans JP", sans-serif;
+	}
+	.content h2 {
+		transition: 0.5s 1s;
+		opacity: 0;
+		color: rgb(30, 210, 200);
+	}
+	.content span {
+		transition: 0.5s 1s;
+		color: #fff;
+		font: 500 15px "Noto Sans JP", sans-serif;
+		position: absolute;
+		top: 70px;
+	}
+	.graphic {
+		position: absolute;
+		top: -130px;
+		right: -240px;
+	}
+	.item,
+	.itemp {
+		position: absolute;
+		right: calc(var(--i) * 100px);
+		width: calc(var(--w) * 40px);
+    transition: .5s .5s;
+		height: 500px;
+		overflow: hidden;
+		border-radius: 100px;
+		transform: rotateZ(220deg) translate(0, 0);
+		background: rgb(240, 220, 150);
+	}
+	.item:nth-child(2) {
+		background: rgb(240, 190, 230);
+	}
+	.itemp {
+		left: -470px;
+		top: -140px;
+		width: 70px;
+		background-color: rgb(90, 220, 150);
+	}
+  /* animation */
+  .container:hover .graphic div {
+    transition: .5s calc(var(--i) * 0.1s);
+    transform: rotateZ(220deg) translate(-200px, 400px);
+  }
+  .container:hover .content {
+    transition: 1s .5s;
+    left: 370px;
+  }
+  .container:hover .content span {
+    transition: 1s .5s;
+    top: 105px;
+  }
+  .container:hover .content h2 {
+    transition: 1s .5s;
+    opacity: 1;
+  }
+</style>
