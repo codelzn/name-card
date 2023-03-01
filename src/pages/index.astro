@@ -6,16 +6,16 @@ import Layout from "../layouts/Layout.astro"
 	<main>
 		<div class="container">
 			<div class="content">
-				<a href="#">codelzn</a>
+				<a href="https://github.com/codelzn">李振南</a>
 				<h2>GitHub: codelzn</h2>
 				<span>
-					ああああああああ
+					👨‍💻 Frontend Engineer
 					<br />
-					いいいいいいいい
+					👨‍🎓 Student in Japan
 					<br />
-					うううううううう
+					📝 Vue React
 					<br />
-					ええええええええ
+					💕 TypeScript Three.js
 				</span>
 			</div>
 			<div class="graphic">
@@ -25,7 +25,7 @@ import Layout from "../layouts/Layout.astro"
 				<div class="item" style="--i:4;--w:1.7;"></div>
 				<div class="itemp" style="--i:1;"></div>
 			</div>
-			<div class="pic"></div>
+			<a class="pic" href="https://github.com/codelzn"></a>
 		</div>
 	</main>
 </Layout>
@@ -49,26 +49,28 @@ import Layout from "../layouts/Layout.astro"
 	}
 	.content {
 		position: absolute;
-		width: 200px;
+		width: 250px;
 		height: 300px;
 		left: 0;
 		margin: 75px 50px;
 		transition: 1s;
 	}
 	.content a {
+    letter-spacing: 0.1em;
 		text-decoration: none;
 		color: #fff;
-		font: 900 28px "Noto Sans JP", sans-serif;
+		font: 700 28px "Noto Sans JP", sans-serif;
 	}
 	.content h2 {
 		transition: 0.5s 1s;
 		opacity: 0;
-		color: rgb(30, 210, 200);
+    margin-top: 10px;
+		color: #333;
 	}
 	.content span {
 		transition: 0.5s 1s;
 		color: #fff;
-		font: 500 15px "Noto Sans JP", sans-serif;
+		font: 500 20px "Noto Sans JP", sans-serif;
 		position: absolute;
 		top: 70px;
 	}
@@ -82,7 +84,7 @@ import Layout from "../layouts/Layout.astro"
 		position: absolute;
 		right: calc(var(--i) * 100px);
 		width: calc(var(--w) * 40px);
-    transition: .5s .5s;
+		transition: 0.5s 0.5s;
 		height: 500px;
 		overflow: hidden;
 		border-radius: 100px;
@@ -98,21 +100,36 @@ import Layout from "../layouts/Layout.astro"
 		width: 70px;
 		background-color: rgb(90, 220, 150);
 	}
-  /* animation */
-  .container:hover .graphic div {
-    transition: .5s calc(var(--i) * 0.1s);
-    transform: rotateZ(220deg) translate(-200px, 400px);
-  }
-  .container:hover .content {
-    transition: 1s .5s;
-    left: 370px;
-  }
-  .container:hover .content span {
-    transition: 1s .5s;
-    top: 105px;
-  }
-  .container:hover .content h2 {
-    transition: 1s .5s;
-    opacity: 1;
-  }
+	/* animation */
+	.container:hover .graphic div {
+		transition: 0.5s calc(var(--i) * 0.1s);
+		transform: rotateZ(220deg) translate(-200px, 400px);
+	}
+	.container:hover .content {
+		transition: 1s 0.5s;
+		left: 370px;
+	}
+	.container:hover .content span {
+		transition: 1s 0.5s;
+		top: 105px;
+	}
+	.container:hover .content h2 {
+		transition: 1s 0.5s;
+		opacity: 1;
+	}
+	.pic {
+		cursor: pointer;
+		width: 250px;
+		height: 250px;
+		position: absolute;
+		background-image: url("/github.svg");
+		background-size: cover;
+		margin: 70px;
+		opacity: 0;
+		transition: 0.5s;
+	}
+	.container:hover .pic {
+		opacity: 1;
+		transition: 1s 1.3s;
+	}
 </style>
